@@ -38,7 +38,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.send("it is working");
+  res.send(database.users);
 });
 
 app.post("/signin", signin.handleSignin(db, bcrypt));
@@ -62,6 +62,6 @@ app.post("/imageurl", (req, res) => {
 //   res.status(400).json("not found");
 // }
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log("app is running on port ${process.env.PORT}");
+app.listen(3000, () => {
+  console.log("app is running on port 3000");
 });
